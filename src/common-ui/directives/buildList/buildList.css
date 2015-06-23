@@ -1,5 +1,9 @@
 .build-list {
 	margin-bottom: 5px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .build-list .no-services-message {

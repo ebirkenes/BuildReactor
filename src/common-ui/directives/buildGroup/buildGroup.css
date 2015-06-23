@@ -1,8 +1,28 @@
+build-group {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.build-group {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.build-group .builds {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .build-group .group-name {
 	clear: both;
 	display: block;
 	font-weight: bold;
-	height: 30px;
+	height: 35px;
 	line-height: 40px;
 	margin-bottom: -5px;
 	margin-left: 5px;
@@ -10,6 +30,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+    font-size: 28px;
 }
 
 .build-group .group-items {

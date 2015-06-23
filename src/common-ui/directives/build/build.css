@@ -1,13 +1,29 @@
+build {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .build {
 	padding-left: 5px;
 	padding-right: 5px;
 	float: left;
 	width: 100%;
+    
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.build .progress-bar {
+    flex-grow: 1;
 }
 
 .changes-container {
-	height: 1.5em;
-	overflow: hidden;
+	/*height: 1.5em;*/
+	/*overflow: hidden;*/
 	position: relative;
 	text-align: left;
 }
@@ -16,11 +32,17 @@
 	display: block;
 	opacity: 0;
 	overflow: hidden;
+    white-space: normal;
 	position: absolute;
 	text-overflow: ellipsis;
 	transform: translateY(90%); 
 	transition: opacity 1s, transform 2s;
 	width: 100%;
+    font-size: 20px;
+}
+
+.changes .change-name {
+ font-weight: bolder   
 }
 
 .changes.active {
@@ -111,6 +133,8 @@
 		display: block;
 		overflow: hidden;
 		text-overflow: ellipsis;
+        font-size: 28px;
+        line-height: 30px;
 	}
 
 	.build .labels {
