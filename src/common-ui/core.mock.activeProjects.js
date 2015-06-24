@@ -45,19 +45,22 @@ define(function () {
 					isBroken: false,
 					url: "http://ci.openmrs.org/browse/FUNC-PERF-4",
 					isRunning: true,
+                    percentComplete: 25,
 					changes: []
 				}, {
 					name: "Failed",
 					group: "Building",
 					isBroken: true,
 					url: "http://ci.openmrs.org/browse/FUNC-PERF-4",
-					isRunning: true
+					isRunning: true,
+                    percentComplete: 50,
 				}, {
 					name: "Unstable",
 					group: "Building",
 					isBroken: true,
 					url: "http://ci.openmrs.org/browse/FUNC-PERF-4",
 					isRunning: true,
+                    percentComplete: 75,
 					tags: [{ name: 'Unstable', type: 'warning' }]
 				}, {
 					name: "Success",

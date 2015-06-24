@@ -17,9 +17,7 @@ build {
     
 }
 
-.build .progress-bar {
-    flex-grow: 1;
-}
+
 
 .changes-container {
 	/*height: 1.5em;*/
@@ -64,17 +62,26 @@ build {
 		white-space: normal;
 	}
 	
-	.build a {
+.build .progress {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+	.build .progress-bar {
+        flex-grow: 1;
 		background-color: #360;
 		border-radius: 5px;
 		cursor: pointer;
-		margin-top: 5px;
 		padding: 5px 10px 5px 5px;
 		position: relative;
 		white-space: nowrap;
 	}
 
-	.build.disabled a {
+	.build.disabled .progress-bar {
 		background-color: #888;
 	}
 
@@ -82,14 +89,14 @@ build {
 			color: black;
 		}
 
-		.build.disabled.broken a {
+		.build.disabled.broken .progress-bar {
 			background-color: #888;
 		}
 
-	.build.offline a,
-	.build.offline.broken a,
-	.build.offline.building a,
-	.build.offline.broken.building a {
+	.build.offline .progress-bar,
+	.build.offline.broken .progress-bar,
+	.build.offline.building .progress-bar,
+	.build.offline.broken.building .progress-bar {
 		background-color: #888;
 	}
 
@@ -106,8 +113,12 @@ build {
 			color: #900;
 		}
 
-	.build.building a {
-		background-color: #f89406;
+    .build.building .progress {
+		/*background-color: #ffe153;*/
+	}
+
+	.build.building .progress-bar {
+		background-color: #ffc739;
 	}
 
 		.build.building .build-name,
@@ -115,13 +126,16 @@ build {
 			color: #360;
 		}
 
-	.build.broken a {
+	.build.broken .progress-bar {
 		background-color: #900;
 		font-weight: bold;
 	}
 
-		.build.broken.building a {
-			background-color: #f89406;
+    .build.broken.building .progress {
+		/*background-color: #ffe153;*/
+	}
+		.build.broken.building .progress-bar {
+			background-color: #ffc739;
 		}
 	
 		.build.broken.building .build-name,

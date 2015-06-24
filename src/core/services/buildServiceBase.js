@@ -99,6 +99,9 @@ define([
 		newState.changes = getUniqueChanges(newState.changes);
 		var lastState = this.latestBuildStates[newState.id];
 		this.latestBuildStates[newState.id] = newState;
+        if (newState.isRunning) {
+            this.events.onNext({ eventName: 'buildRunning', details: newState, source: newState.serviceName });
+        }
 		if (!lastState.error && newState.error) {
 			this.events.onNext({ eventName: 'buildOffline', details: newState, source: newState.serviceName });
 		}

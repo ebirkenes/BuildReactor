@@ -33,8 +33,10 @@ define([
 					});
 			}).select(function (state) {
 				state.isRunning = isRunning;
+                state.percentComplete = 100;
 				if (isRunning) {
 					state.webUrl = buildListResponse.build[0].webUrl;
+                    state.percentComplete = buildListResponse.build[0].percentageComplete
 				}
 				return state;
 			});

@@ -34,6 +34,11 @@ define([
 						$scope.viewConfig = config;
 					});
 				});
+                
+                $scope.getProgressStyle = function() {
+                    var width = $scope.build.percentComplete ? $scope.build.percentComplete : 100;
+                    return {width: width + "%"};
+                }
 
 			}
 		};
