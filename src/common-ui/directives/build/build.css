@@ -4,25 +4,23 @@ build {
     flex-direction: column;
     justify-content: center;
 }
+
 .build {
-	padding-left: 5px;
-	padding-right: 5px;
-	float: left;
-	width: 100%;
-    
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    position: relative;
+
+    padding-left: 5px;
+	padding-right: 5px;
+	float: left;
+	width: 100%;
 }
-
-
 
 .changes-container {
 	/*height: 1.5em;*/
 	/*overflow: hidden;*/
-	position: relative;
 	text-align: left;
 }
 
@@ -58,28 +56,43 @@ build {
 	width: 100%;
 }
 
-	.build .tooltip {
-		white-space: normal;
-	}
+.build .tooltip {
+    white-space: normal;
+}
 	
-.build .progress {
+.build .build-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 5px;
     background-color: #333;
+    position: relative;
+    /*position: absolute;
+    top: 0px;*/
 }
 
-	.build .progress-bar {
+.build .build-content .progress-bar {
+    flex-grow: 1;
+    background-color: #360;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px 5px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+}
+
+    .build .build-content .build-info {
         flex-grow: 1;
-		background-color: #360;
-		border-radius: 5px;
-		cursor: pointer;
-		padding: 5px 10px 5px 5px;
-		position: relative;
-		white-space: nowrap;
-	}
+        position: absolute;
+        justify-content: center;
+        top:0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
 
 	.build.disabled .progress-bar {
 		background-color: #888;
@@ -113,10 +126,6 @@ build {
 			color: #900;
 		}
 
-    .build.building .progress {
-		/*background-color: #ffe153;*/
-	}
-
 	.build.building .progress-bar {
 		background-color: #ffc739;
 	}
@@ -131,9 +140,6 @@ build {
 		font-weight: bold;
 	}
 
-    .build.broken.building .progress {
-		/*background-color: #ffe153;*/
-	}
 		.build.broken.building .progress-bar {
 			background-color: #ffc739;
 		}
@@ -149,12 +155,16 @@ build {
 		text-overflow: ellipsis;
         font-size: 28px;
         line-height: 30px;
+        text-align: center;
 	}
 
 	.build .labels {
 		margin-top: -1px;
 		max-width: 50%;
 		overflow: hidden;
+        /*position: absolute;
+        top: 3px;
+        right: 3px;*/
 	}
 
 	.build .label {
